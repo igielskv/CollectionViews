@@ -10,14 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
     var item: Item?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print(item?.description)
+        
+        if let item = item {
+            titleLabel.text = item.title
+            descriptionTextView.text = item.description
+        }
     }
-
-
 }
 
