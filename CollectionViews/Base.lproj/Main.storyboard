@@ -23,13 +23,32 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SHi-IX-w9w" customClass="CollectionViewCell" customModule="CollectionViews" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="SHi-IX-w9w" customClass="CollectionViewCell" customModule="CollectionViews" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zEI-U3-Xi4">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePy-vd-jLo">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="ePy-vd-jLo" secondAttribute="trailing" id="4q9-Vw-ilA"/>
+                                        <constraint firstItem="ePy-vd-jLo" firstAttribute="leading" secondItem="zEI-U3-Xi4" secondAttribute="leading" id="ALn-Rg-417"/>
+                                        <constraint firstAttribute="bottom" secondItem="ePy-vd-jLo" secondAttribute="bottom" id="WDV-JJ-Bc7"/>
+                                        <constraint firstItem="ePy-vd-jLo" firstAttribute="top" secondItem="zEI-U3-Xi4" secondAttribute="top" id="c71-bQ-uFv"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="customSize" width="128" height="128"/>
+                                <connections>
+                                    <outlet property="label" destination="ePy-vd-jLo" id="Rsd-JU-xaK"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -40,7 +59,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJI-JH-mJ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-750" y="137"/>
+            <point key="canvasLocation" x="-751.20000000000005" y="136.69950738916256"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
