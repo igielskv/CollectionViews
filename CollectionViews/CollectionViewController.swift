@@ -10,9 +10,15 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
+struct Item {
+    var title: String
+    var description: String
+}
 class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var itemSize: CGSize!
+    
+    var items: [Item] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +44,13 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
             layout.estimatedItemSize = CGSize(width: 0, height: 0)
             itemSize = CGSize(width: width, height: height)
         }
+        
+        items.append(Item(title: "Item 1", description: "Item 1 Description"))
+        items.append(Item(title: "Item 2", description: "Item 2 Description"))
+        items.append(Item(title: "Item 3", description: "Item 3 Description"))
+        items.append(Item(title: "Item 4", description: "Item 4 Description"))
+        items.append(Item(title: "Item 5", description: "Item 5 Description"))
+        items.append(Item(title: "Item 6", description: "Item 6 Description"))
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -64,7 +77,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 20
+        return items.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -73,7 +86,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         // Configure the cell
     
         if let cell = cell as? CollectionViewCell {
-            cell.label.text = "\(indexPath.row + 1)"
+            cell.label.text = items[indexPath.row].title
         }
         return cell
     }
