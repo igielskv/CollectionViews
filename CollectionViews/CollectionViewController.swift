@@ -10,8 +10,10 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class CollectionViewController: UICollectionViewController {
+class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
+    var itemSize: CGSize!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,11 +21,29 @@ class CollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        // self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        // Line above has to be commented out to be able to use custom CollectionViewCell
 
         // Do any additional setup after loading the view.
+        
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            let itemsPerRow: CGFloat = 4
+            let padding: CGFloat = 5
+            let totalPadding: CGFloat = padding * (itemsPerRow - 1)
+            let individualPadding: CGFloat = totalPadding / itemsPerRow
+            let width = collectionView.frame.width / itemsPerRow - individualPadding
+            let height = width
+            layout.minimumLineSpacing = padding
+            layout.minimumInteritemSpacing = 0
+            layout.estimatedItemSize = CGSize(width: 0, height: 0)
+            itemSize = CGSize(width: width, height: height)
+        }
     }
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return itemSize
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -38,13 +58,13 @@ class CollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return 20
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -52,6 +72,9 @@ class CollectionViewController: UICollectionViewController {
     
         // Configure the cell
     
+        if let cell = cell as? CollectionViewCell {
+            cell.label.text = "\(indexPath.row + 1)"
+        }
         return cell
     }
 

@@ -24,14 +24,14 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="SHi-IX-w9w" customClass="CollectionViewCell" customModule="CollectionViews" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="41.666666666666657" height="20.333333333333332"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zEI-U3-Xi4">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="K9N-xF-siQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="41.666666666666657" height="20.333333333333332"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePy-vd-jLo">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="20.333333333333332"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -39,13 +39,12 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="ePy-vd-jLo" secondAttribute="trailing" id="4q9-Vw-ilA"/>
-                                        <constraint firstItem="ePy-vd-jLo" firstAttribute="leading" secondItem="zEI-U3-Xi4" secondAttribute="leading" id="ALn-Rg-417"/>
+                                        <constraint firstItem="ePy-vd-jLo" firstAttribute="leading" secondItem="K9N-xF-siQ" secondAttribute="leading" id="ALn-Rg-417"/>
                                         <constraint firstAttribute="bottom" secondItem="ePy-vd-jLo" secondAttribute="bottom" id="WDV-JJ-Bc7"/>
-                                        <constraint firstItem="ePy-vd-jLo" firstAttribute="top" secondItem="zEI-U3-Xi4" secondAttribute="top" id="c71-bQ-uFv"/>
+                                        <constraint firstItem="ePy-vd-jLo" firstAttribute="top" secondItem="K9N-xF-siQ" secondAttribute="top" id="c71-bQ-uFv"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <size key="customSize" width="128" height="128"/>
                                 <connections>
                                     <outlet property="label" destination="ePy-vd-jLo" id="Rsd-JU-xaK"/>
                                 </connections>
